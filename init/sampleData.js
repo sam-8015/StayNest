@@ -1,0 +1,563 @@
+
+const img = (id) => ({
+  url: `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=60`,
+  filename: "staynest_sample",
+});
+
+const sampleUsers = [
+  { username: "aarav_manali", email: "aarav_manali@staynest.demo" },
+  { username: "diya_goa", email: "diya_goa@staynest.demo" },
+  { username: "kabir_udaipur", email: "kabir_udaipur@staynest.demo" },
+  { username: "meera_alleppey", email: "meera_alleppey@staynest.demo" },
+  { username: "rohan_jaisalmer", email: "rohan_jaisalmer@staynest.demo" },
+  { username: "ananya_munnar", email: "ananya_munnar@staynest.demo" },
+  { username: "vihaan_rishikesh", email: "vihaan_rishikesh@staynest.demo" },
+  { username: "ishita_ooty", email: "ishita_ooty@staynest.demo" },
+  { username: "arjun_mumbai", email: "arjun_mumbai@staynest.demo" },
+  { username: "saanvi_delhi", email: "saanvi_delhi@staynest.demo" },
+  { username: "reyansh_coorg", email: "reyansh_coorg@staynest.demo" },
+  { username: "kiara_varanasi", email: "kiara_varanasi@staynest.demo" },
+  { username: "aditya_shimla", email: "aditya_shimla@staynest.demo" },
+  { username: "myra_jaipur", email: "myra_jaipur@staynest.demo" },
+  { username: "vivaan_bengaluru", email: "vivaan_bengaluru@staynest.demo" },
+  { username: "navya_wayanad", email: "navya_wayanad@staynest.demo" },
+  { username: "krish_gokarna", email: "krish_gokarna@staynest.demo" },
+  { username: "tara_jodhpur", email: "tara_jodhpur@staynest.demo" },
+  { username: "zayan_srinagar", email: "zayan_srinagar@staynest.demo" },
+  { username: "pari_nainital", email: "pari_nainital@staynest.demo" },
+  { username: "hiroshi_tokyo", email: "hiroshi_tokyo@staynest.demo" },
+  { username: "camille_paris", email: "camille_paris@staynest.demo" },
+  { username: "nikos_santorini", email: "nikos_santorini@staynest.demo" },
+  { username: "wayan_ubud", email: "wayan_ubud@staynest.demo" },
+  { username: "lukas_zermatt", email: "lukas_zermatt@staynest.demo" },
+  { username: "giulia_venice", email: "giulia_venice@staynest.demo" },
+  { username: "emma_newyork", email: "emma_newyork@staynest.demo" },
+  { username: "jack_malibu", email: "jack_malibu@staynest.demo" },
+  { username: "ibrahim_maldives", email: "ibrahim_maldives@staynest.demo" },
+  { username: "omar_dubai", email: "omar_dubai@staynest.demo" },
+  { username: "sofia_lisbon", email: "sofia_lisbon@staynest.demo" },
+  { username: "pablo_barcelona", email: "pablo_barcelona@staynest.demo" },
+  { username: "lotte_amsterdam", email: "lotte_amsterdam@staynest.demo" },
+  { username: "oliver_london", email: "oliver_london@staynest.demo" },
+  { username: "marco_rome", email: "marco_rome@staynest.demo" },
+  { username: "thandi_capetown", email: "thandi_capetown@staynest.demo" },
+  { username: "liam_sydney", email: "liam_sydney@staynest.demo" },
+  { username: "noah_banff", email: "noah_banff@staynest.demo" },
+  { username: "bjorn_reykjavik", email: "bjorn_reykjavik@staynest.demo" },
+  { username: "somchai_bangkok", email: "somchai_bangkok@staynest.demo" },
+  { username: "mei_singapore", email: "mei_singapore@staynest.demo" },
+  { username: "sanjay_kathmandu", email: "sanjay_kathmandu@staynest.demo" },
+  { username: "nattaya_phuket", email: "nattaya_phuket@staynest.demo" },
+  { username: "emre_istanbul", email: "emre_istanbul@staynest.demo" },
+  { username: "yasmine_marrakech", email: "yasmine_marrakech@staynest.demo" },
+  { username: "lorenzo_florence", email: "lorenzo_florence@staynest.demo" },
+  { username: "tane_queenstown", email: "tane_queenstown@staynest.demo" },
+  { username: "carlos_monteverde", email: "carlos_monteverde@staynest.demo" },
+  { username: "yuki_kyoto", email: "yuki_kyoto@staynest.demo" },
+  { username: "valeria_mexicocity", email: "valeria_mexicocity@staynest.demo" },
+];
+
+const sampleListings = [
+  {
+    owner: "aarav_manali", // username of the demo user who owns this listing
+    title: "Himalayan Pine Cabin",
+    description: "A warm wooden cabin surrounded by pine trees with snow-capped peaks in view. Perfect for a quiet mountain break.",
+    image: img("1518780664697-55e3ad937233"),
+    price: 3200,
+    location: "Manali",
+    country: "India",
+    geometry: { type: "Point", coordinates: [77.1892, 32.2396] },
+  },
+  {
+    owner: "diya_goa", // username of the demo user who owns this listing
+    title: "Sea-Facing Beach Villa",
+    description: "Wake up to the sound of waves in this airy villa a short walk from the beach, with a private garden and sit-out.",
+    image: img("1507089947368-19c1da9775ae"),
+    price: 9500,
+    location: "Calangute, Goa",
+    country: "India",
+    geometry: { type: "Point", coordinates: [73.7554, 15.5439] },
+  },
+  {
+    owner: "kabir_udaipur", // username of the demo user who owns this listing
+    title: "Lakeview Heritage Haveli",
+    description: "A restored haveli with carved balconies overlooking Lake Pichola. Rooftop breakfast included.",
+    image: img("1564501049412-61c2a3083791"),
+    price: 7800,
+    location: "Udaipur",
+    country: "India",
+    geometry: { type: "Point", coordinates: [73.6833, 24.5854] },
+  },
+  {
+    owner: "meera_alleppey", // username of the demo user who owns this listing
+    title: "Backwater Houseboat Stay",
+    description: "Drift through Kerala's backwaters on a traditional houseboat with a cook on board serving local seafood.",
+    image: img("1439130490301-25e322d88054"),
+    price: 6500,
+    location: "Alleppey",
+    country: "India",
+    geometry: { type: "Point", coordinates: [76.3388, 9.4981] },
+  },
+  {
+    owner: "rohan_jaisalmer", // username of the demo user who owns this listing
+    title: "Desert Camp Under the Stars",
+    description: "Luxury tents in the Thar desert with camel rides, folk music and a campfire dinner.",
+    image: img("1596394516093-501ba68a0ba6"),
+    price: 4500,
+    location: "Jaisalmer",
+    country: "India",
+    geometry: { type: "Point", coordinates: [70.9083, 26.9157] },
+  },
+  {
+    owner: "ananya_munnar", // username of the demo user who owns this listing
+    title: "Tea Estate Bungalow",
+    description: "A peaceful bungalow in the middle of rolling tea gardens, ideal for slow mornings and misty walks.",
+    image: img("1523217582562-09d0def993a6"),
+    price: 5200,
+    location: "Munnar",
+    country: "India",
+    geometry: { type: "Point", coordinates: [77.0595, 10.0889] },
+  },
+  {
+    owner: "vihaan_rishikesh", // username of the demo user who owns this listing
+    title: "Riverside Yoga Retreat",
+    description: "Simple, calm rooms by the Ganges with daily yoga sessions and a vegetarian kitchen.",
+    image: img("1595526114035-0d45ed16cfbf"),
+    price: 2800,
+    location: "Rishikesh",
+    country: "India",
+    geometry: { type: "Point", coordinates: [78.2676, 30.0869] },
+  },
+  {
+    owner: "ishita_ooty", // username of the demo user who owns this listing
+    title: "Colonial Hill Cottage",
+    description: "A cosy stone cottage with a fireplace and a flower garden in the Nilgiri hills.",
+    image: img("1448630360428-65456885c650"),
+    price: 3900,
+    location: "Ooty",
+    country: "India",
+    geometry: { type: "Point", coordinates: [76.695, 11.4102] },
+  },
+  {
+    owner: "arjun_mumbai", // username of the demo user who owns this listing
+    title: "Skyline Apartment in Bandra",
+    description: "A bright 2-BHK on a high floor with sea-breeze balcony, close to cafes and the Bandstand promenade.",
+    image: img("1502672260266-1c1ef2d93688"),
+    price: 8800,
+    location: "Bandra, Mumbai",
+    country: "India",
+    geometry: { type: "Point", coordinates: [72.8777, 19.076] },
+  },
+  {
+    owner: "saanvi_delhi", // username of the demo user who owns this listing
+    title: "Cozy Studio in Central Delhi",
+    description: "A neat studio next to the metro, great for exploring India Gate, Old Delhi and the markets.",
+    image: img("1522708323590-d24dbb6b0267"),
+    price: 3600,
+    location: "Connaught Place, Delhi",
+    country: "India",
+    geometry: { type: "Point", coordinates: [77.209, 28.6139] },
+  },
+  {
+    owner: "reyansh_coorg", // username of the demo user who owns this listing
+    title: "Coffee Plantation Homestay",
+    description: "Stay inside a working coffee estate with home-cooked Kodava meals and guided plantation walks.",
+    image: img("1506744038136-46273834b3fb"),
+    price: 3400,
+    location: "Madikeri, Coorg",
+    country: "India",
+    geometry: { type: "Point", coordinates: [75.7382, 12.3375] },
+  },
+  {
+    owner: "kiara_varanasi", // username of the demo user who owns this listing
+    title: "Ganges Ghat Guesthouse",
+    description: "A heritage guesthouse steps from the ghats. Watch the evening aarti from the terrace.",
+    image: img("1455587734955-081b22074882"),
+    price: 2200,
+    location: "Varanasi",
+    country: "India",
+    geometry: { type: "Point", coordinates: [83.0104, 25.3176] },
+  },
+  {
+    owner: "aditya_shimla", // username of the demo user who owns this listing
+    title: "Snow-View Chalet",
+    description: "A wooden chalet with big windows facing the snowy ridges, with a heater and hot tea on arrival.",
+    image: img("1510798831971-661eb04b3739"),
+    price: 4100,
+    location: "Shimla",
+    country: "India",
+    geometry: { type: "Point", coordinates: [77.1734, 31.1048] },
+  },
+  {
+    owner: "myra_jaipur", // username of the demo user who owns this listing
+    title: "Royal Palace Suite",
+    description: "Sleep like royalty in a Rajasthani-style suite with hand-painted walls and a courtyard pool.",
+    image: img("1551882547-ff40c63fe5fa"),
+    price: 8200,
+    location: "Jaipur",
+    country: "India",
+    geometry: { type: "Point", coordinates: [75.7873, 26.9124] },
+  },
+  {
+    owner: "vivaan_bengaluru", // username of the demo user who owns this listing
+    title: "Rooftop Loft in Indiranagar",
+    description: "A modern loft with a private rooftop, fast Wi-Fi and a workspace. Pubs and cafes nearby.",
+    image: img("1560448204-e02f11c3d0e2"),
+    price: 4300,
+    location: "Indiranagar, Bengaluru",
+    country: "India",
+    geometry: { type: "Point", coordinates: [77.5946, 12.9716] },
+  },
+  {
+    owner: "navya_wayanad", // username of the demo user who owns this listing
+    title: "Treehouse in the Woods",
+    description: "A treehouse built among forest trees. Bird calls in the morning and a starry sky at night.",
+    image: img("1449158743715-0a90ebb6d2d8"),
+    price: 5600,
+    location: "Wayanad",
+    country: "India",
+    geometry: { type: "Point", coordinates: [76.132, 11.6854] },
+  },
+  {
+    owner: "krish_gokarna", // username of the demo user who owns this listing
+    title: "Beachfront Cottage in Gokarna",
+    description: "A simple cottage right on a quiet beach, with hammocks and a shack serving fresh fish.",
+    image: img("1507525428034-b723cf961d3e"),
+    price: 3000,
+    location: "Gokarna",
+    country: "India",
+    geometry: { type: "Point", coordinates: [74.3188, 14.5479] },
+  },
+  {
+    owner: "tara_jodhpur", // username of the demo user who owns this listing
+    title: "Blue City Fort-View Room",
+    description: "A rooftop room in the old Blue City with a direct view of Mehrangarh Fort.",
+    image: img("1542314831-068cd1dbfeeb"),
+    price: 3500,
+    location: "Jodhpur",
+    country: "India",
+    geometry: { type: "Point", coordinates: [73.0243, 26.2389] },
+  },
+  {
+    owner: "zayan_srinagar", // username of the demo user who owns this listing
+    title: "Houseboat on Dal Lake",
+    description: "A carved cedar-wood houseboat with kahwa tea, shikara rides and mountain views.",
+    image: img("1544984243-ec57ea16fe25"),
+    price: 5900,
+    location: "Srinagar",
+    country: "India",
+    geometry: { type: "Point", coordinates: [74.7973, 34.0837] },
+  },
+  {
+    owner: "pari_nainital", // username of the demo user who owns this listing
+    title: "Lakeside Villa in Nainital",
+    description: "A spacious villa with a lake view lawn, ideal for families and long weekends.",
+    image: img("1431540015161-0bf868a2d407"),
+    price: 6100,
+    location: "Nainital",
+    country: "India",
+    geometry: { type: "Point", coordinates: [79.4633, 29.3919] },
+  },
+  {
+    owner: "hiroshi_tokyo", // username of the demo user who owns this listing
+    title: "Compact Studio in Shinjuku",
+    description: "A clean, minimal studio steps from the station, perfect for first-time visitors to Tokyo.",
+    image: img("1445019980597-93fa8acb246c"),
+    price: 7200,
+    location: "Shinjuku, Tokyo",
+    country: "Japan",
+    geometry: { type: "Point", coordinates: [139.6917, 35.6895] },
+  },
+  {
+    owner: "camille_paris", // username of the demo user who owns this listing
+    title: "Parisian Balcony Apartment",
+    description: "A classic Haussmann-style flat with a Juliet balcony and fresh pastries from the bakery downstairs.",
+    image: img("1578683010236-d716f9a3f461"),
+    price: 11500,
+    location: "Le Marais, Paris",
+    country: "France",
+    geometry: { type: "Point", coordinates: [2.3522, 48.8566] },
+  },
+  {
+    owner: "nikos_santorini", // username of the demo user who owns this listing
+    title: "Cave House with Caldera View",
+    description: "A whitewashed cave house carved into the cliff with a plunge pool and sunset views over the caldera.",
+    image: img("1564078516393-cf04bd966897"),
+    price: 16500,
+    location: "Oia, Santorini",
+    country: "Greece",
+    geometry: { type: "Point", coordinates: [25.4615, 36.3932] },
+  },
+  {
+    owner: "wayan_ubud", // username of the demo user who owns this listing
+    title: "Jungle Villa with Private Pool",
+    description: "An open-air villa surrounded by rice fields and palms, with a private pool and daily breakfast.",
+    image: img("1605276374104-dee2a0ed3cd6"),
+    price: 8900,
+    location: "Ubud, Bali",
+    country: "Indonesia",
+    geometry: { type: "Point", coordinates: [115.2625, -8.5069] },
+  },
+  {
+    owner: "lukas_zermatt", // username of the demo user who owns this listing
+    title: "Swiss Alpine Chalet",
+    description: "A traditional chalet with a Matterhorn view, sauna and ski room at the door.",
+    image: img("1494526585095-c41746248156"),
+    price: 18500,
+    location: "Zermatt",
+    country: "Switzerland",
+    geometry: { type: "Point", coordinates: [7.7491, 46.0207] },
+  },
+  {
+    owner: "giulia_venice", // username of the demo user who owns this listing
+    title: "Canal-Side Apartment",
+    description: "A charming apartment on a quiet canal with wooden beams and a small balcony.",
+    image: img("1618773928121-c32242e63f39"),
+    price: 13200,
+    location: "Venice",
+    country: "Italy",
+    geometry: { type: "Point", coordinates: [12.3155, 45.4408] },
+  },
+  {
+    owner: "emma_newyork", // username of the demo user who owns this listing
+    title: "Industrial Loft in Manhattan",
+    description: "A high-ceiling loft with exposed brick and big windows, close to the subway and great food.",
+    image: img("1590490360182-c33d57733427"),
+    price: 15000,
+    location: "Manhattan, New York",
+    country: "United States",
+    geometry: { type: "Point", coordinates: [-74.006, 40.7128] },
+  },
+  {
+    owner: "jack_malibu", // username of the demo user who owns this listing
+    title: "Malibu Beach House",
+    description: "A bright beach house with a deck facing the Pacific, outdoor shower and surfboards to borrow.",
+    image: img("1512917774080-9991f1c4c750"),
+    price: 21000,
+    location: "Malibu",
+    country: "United States",
+    geometry: { type: "Point", coordinates: [-118.7798, 34.0259] },
+  },
+  {
+    owner: "ibrahim_maldives", // username of the demo user who owns this listing
+    title: "Overwater Bungalow",
+    description: "A bungalow on stilts with a glass floor panel, direct lagoon access and snorkelling gear.",
+    image: img("1570129477492-45c003edd2be"),
+    price: 32000,
+    location: "Malé Atoll",
+    country: "Maldives",
+    geometry: { type: "Point", coordinates: [73.5093, 4.1755] },
+  },
+  {
+    owner: "omar_dubai", // username of the demo user who owns this listing
+    title: "Marina Penthouse",
+    description: "A penthouse with floor-to-ceiling windows, infinity pool access and skyline views.",
+    image: img("1584132967334-10e028bd69f7"),
+    price: 19500,
+    location: "Dubai Marina",
+    country: "United Arab Emirates",
+    geometry: { type: "Point", coordinates: [55.138, 25.0805] },
+  },
+  {
+    owner: "sofia_lisbon", // username of the demo user who owns this listing
+    title: "Tram-Street Flat in Alfama",
+    description: "A tiled apartment on a hillside street. Fado music drifts in from nearby restaurants.",
+    image: img("1631049307264-da0ec9d70304"),
+    price: 8400,
+    location: "Alfama, Lisbon",
+    country: "Portugal",
+    geometry: { type: "Point", coordinates: [-9.1393, 38.7223] },
+  },
+  {
+    owner: "pablo_barcelona", // username of the demo user who owns this listing
+    title: "Gothic Quarter Flat",
+    description: "A stylish flat inside a historic building, a few minutes from Las Ramblas and the beach.",
+    image: img("1611892440504-42a792e24d32"),
+    price: 9300,
+    location: "Gothic Quarter, Barcelona",
+    country: "Spain",
+    geometry: { type: "Point", coordinates: [2.1734, 41.3851] },
+  },
+  {
+    owner: "lotte_amsterdam", // username of the demo user who owns this listing
+    title: "Canal House Room",
+    description: "A cosy room in a 17th-century canal house, with bikes available for guests.",
+    image: img("1540518614846-7eded433c457"),
+    price: 12800,
+    location: "Amsterdam",
+    country: "Netherlands",
+    geometry: { type: "Point", coordinates: [4.9041, 52.3676] },
+  },
+  {
+    owner: "oliver_london", // username of the demo user who owns this listing
+    title: "Victorian Townhouse Room",
+    description: "A bright room in a classic townhouse near Portobello Market and Hyde Park.",
+    image: img("1505691938895-1758d7feb511"),
+    price: 14200,
+    location: "Notting Hill, London",
+    country: "United Kingdom",
+    geometry: { type: "Point", coordinates: [-0.1278, 51.5074] },
+  },
+  {
+    owner: "marco_rome", // username of the demo user who owns this listing
+    title: "Colosseum-View Apartment",
+    description: "Wake up to a view of the Colosseum from the terrace of this elegant two-bedroom flat.",
+    image: img("1521783988139-89397d761dce"),
+    price: 12600,
+    location: "Rome",
+    country: "Italy",
+    geometry: { type: "Point", coordinates: [12.4964, 41.9028] },
+  },
+  {
+    owner: "thandi_capetown", // username of the demo user who owns this listing
+    title: "Ocean View Villa",
+    description: "A modern villa with a pool facing the Atlantic and Table Mountain behind.",
+    image: img("1613490493576-7fde63acd811"),
+    price: 17400,
+    location: "Camps Bay, Cape Town",
+    country: "South Africa",
+    geometry: { type: "Point", coordinates: [18.4241, -33.9249] },
+  },
+  {
+    owner: "liam_sydney", // username of the demo user who owns this listing
+    title: "Harbour Studio",
+    description: "A stylish studio a short walk from the Opera House and ferry terminal.",
+    image: img("1580587771525-78b9dba3b914"),
+    price: 13900,
+    location: "Circular Quay, Sydney",
+    country: "Australia",
+    geometry: { type: "Point", coordinates: [151.2093, -33.8688] },
+  },
+  {
+    owner: "noah_banff", // username of the demo user who owns this listing
+    title: "Mountain Lodge in Banff",
+    description: "A timber lodge near the Rockies with a hot tub, fireplace and trails right outside.",
+    image: img("1470770841072-f978cf4d019e"),
+    price: 15800,
+    location: "Banff",
+    country: "Canada",
+    geometry: { type: "Point", coordinates: [-115.5708, 51.1784] },
+  },
+  {
+    owner: "bjorn_reykjavik", // username of the demo user who owns this listing
+    title: "Northern Lights Cabin",
+    description: "A snug cabin outside the city with a hot tub, perfect for aurora watching in winter.",
+    image: img("1542718610-a1d656d1884c"),
+    price: 14700,
+    location: "Reykjavik",
+    country: "Iceland",
+    geometry: { type: "Point", coordinates: [-21.8174, 64.1265] },
+  },
+  {
+    owner: "somchai_bangkok", // username of the demo user who owns this listing
+    title: "Riverside Condo with Pool",
+    description: "A modern condo on the Chao Phraya with a rooftop pool and a free shuttle boat.",
+    image: img("1522771739844-6a9f6d5f14af"),
+    price: 5400,
+    location: "Riverside, Bangkok",
+    country: "Thailand",
+    geometry: { type: "Point", coordinates: [100.5018, 13.7563] },
+  },
+  {
+    owner: "mei_singapore", // username of the demo user who owns this listing
+    title: "Garden Suite in Tiong Bahru",
+    description: "A light-filled suite in a charming neighbourhood known for cafes and hawker food.",
+    image: img("1493663284031-b7e3aefcae8e"),
+    price: 11800,
+    location: "Tiong Bahru, Singapore",
+    country: "Singapore",
+    geometry: { type: "Point", coordinates: [103.8198, 1.3521] },
+  },
+  {
+    owner: "sanjay_kathmandu", // username of the demo user who owns this listing
+    title: "Himalaya View Home",
+    description: "A warm family-run home with rooftop views of the Himalayas and home-cooked dal bhat.",
+    image: img("1519681393784-d120267933ba"),
+    price: 2900,
+    location: "Kathmandu",
+    country: "Nepal",
+    geometry: { type: "Point", coordinates: [85.324, 27.7172] },
+  },
+  {
+    owner: "nattaya_phuket", // username of the demo user who owns this listing
+    title: "Phuket Pool Villa",
+    description: "A private pool villa five minutes from the beach, with a tropical garden and daily breakfast.",
+    image: img("1559827260-dc66d52bef19"),
+    price: 10200,
+    location: "Kata, Phuket",
+    country: "Thailand",
+    geometry: { type: "Point", coordinates: [98.3923, 7.8804] },
+  },
+  {
+    owner: "emre_istanbul", // username of the demo user who owns this listing
+    title: "Bosphorus View Flat",
+    description: "A bright flat with a Bosphorus view, close to the old city, ferries and street food.",
+    image: img("1484101403633-562f891dc89a"),
+    price: 7600,
+    location: "Beyoglu, Istanbul",
+    country: "Turkey",
+    geometry: { type: "Point", coordinates: [28.9784, 41.0082] },
+  },
+  {
+    owner: "yasmine_marrakech", // username of the demo user who owns this listing
+    title: "Traditional Riad with Courtyard",
+    description: "A tiled riad with a quiet courtyard, a plunge pool and a rooftop terrace in the medina.",
+    image: img("1544124499-58912cbddaad"),
+    price: 6900,
+    location: "Marrakech",
+    country: "Morocco",
+    geometry: { type: "Point", coordinates: [-7.9811, 31.6295] },
+  },
+  {
+    owner: "lorenzo_florence", // username of the demo user who owns this listing
+    title: "Tuscan Farmhouse",
+    description: "A stone farmhouse among vineyards and olive trees, with a pool and wine tasting on request.",
+    image: img("1564013799919-ab600027ffc6"),
+    price: 12100,
+    location: "Chianti, Tuscany",
+    country: "Italy",
+    geometry: { type: "Point", coordinates: [11.2558, 43.7696] },
+  },
+  {
+    owner: "tane_queenstown", // username of the demo user who owns this listing
+    title: "Lake Cabin in Queenstown",
+    description: "A modern cabin with a deck by the lake, close to ski fields and adventure activities.",
+    image: img("1587061949409-02df41d5e562"),
+    price: 16900,
+    location: "Queenstown",
+    country: "New Zealand",
+    geometry: { type: "Point", coordinates: [168.6626, -45.0312] },
+  },
+  {
+    owner: "carlos_monteverde", // username of the demo user who owns this listing
+    title: "Rainforest Eco-Lodge",
+    description: "An eco-lodge inside the cloud forest with guided night walks and bird-watching.",
+    image: img("1583608205776-bfd35f0d9f83"),
+    price: 9700,
+    location: "Monteverde",
+    country: "Costa Rica",
+    geometry: { type: "Point", coordinates: [-84.8247, 10.3] },
+  },
+  {
+    owner: "yuki_kyoto", // username of the demo user who owns this listing
+    title: "Traditional Machiya Townhouse",
+    description: "A restored wooden townhouse with tatami rooms and a small garden, close to temples and tea houses.",
+    image: img("1600596542815-ffad4c1539a9"),
+    price: 11300,
+    location: "Gion, Kyoto",
+    country: "Japan",
+    geometry: { type: "Point", coordinates: [135.7681, 35.0116] },
+  },
+  {
+    owner: "valeria_mexicocity", // username of the demo user who owns this listing
+    title: "Casa in Roma Norte",
+    description: "A colourful art-filled house in a leafy neighbourhood full of cafes, galleries and taquerias.",
+    image: img("1600585154340-be6161a56a0c"),
+    price: 8100,
+    location: "Roma Norte, Mexico City",
+    country: "Mexico",
+    geometry: { type: "Point", coordinates: [-99.1332, 19.4326] },
+  },
+];
+
+module.exports = { sampleUsers, sampleListings };

@@ -138,11 +138,11 @@ StayNest/
 - User profiles and wishlists
 - Pagination for large numbers of listings
 
+
 ## Author
-
-**Your Name**
-GitHub: [@your-username]((https://github.com/sam-8015))
-
+ 
+**sam-8015**
+GitHub: [@sam-8015](https://github.com/sam-8015)
+ 
 ---
-
 If you like this project, give it a star.
